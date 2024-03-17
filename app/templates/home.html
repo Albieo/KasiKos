@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="row g-3" method="post" action="#">
+        <div class="col-md-4">
+          <label for="validationServer01" class="form-label">First name</label>
+          <input type="text" class="form-control {% if first_name_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServer01" name="first_name" required>
+          <div class="valid-feedback">
+            {% if first_name_valid %}Looks good!{% else %}Please enter a valid first name.{% endif %}
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Last name</label>
+          <input type="text" class="form-control {% if last_name_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServer02" name="last_name" required>
+          <div class="valid-feedback">
+            {% if last_name_valid %}Looks good!{% else %}Please enter a valid last name.{% endif %}
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServerUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+            <input type="text" class="form-control {% if username_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="username" required>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                {% if username_valid %}Looks good!{% else %}Please choose a username.{% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationServer03" class="form-label">City</label>
+          <input type="text" class="form-control {% if city_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServer03" aria-describedby="validationServer03Feedback" name="city" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            {% if city_valid %}Looks good!{% else %}Please provide a valid city.{% endif %}
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationServer04" class="form-label">Province</label>
+          <select class="form-select {% if province_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServer04" aria-describedby="validationServer04Feedback" name="province" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Eastern Cape</option>
+            <option>Free State</option>
+            <option>Gauteng</option>
+            <option>KwaZulu-Natal</option>
+            <option>Limpopo</option>
+            <option>Mpumalanga</option>
+            <option>Northern Cape</option>
+            <option>North West</option>
+            <option>Western Cape</option>
+          </select>
+          <div id="validationServer04Feedback" class="invalid-feedback">
+            {% if province_valid %}Looks good!{% else %}Please select a valid province.{% endif %}
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationServer05" class="form-label">Zip</label>
+          <input type="text" class="form-control {% if zip_valid %} is-valid {% else %} is-invalid {% endif %}" id="validationServer05" aria-describedby="validationServer05Feedback" name="zip_code" required>
+          <div id="validationServer05Feedback" class="invalid-feedback">
+            {% if province_valid %}Looks good!{% else %}Please provide a valid zip.{% endif %}
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+      </form>
+
+    <script src="../static/js/bootstrap.bundle.js"></script>
+</body>
+</html>
